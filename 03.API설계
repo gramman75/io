@@ -1,0 +1,21 @@
+ㅇ API-First Design
+    . API-First Design을 하면 서비스 제공자(Provider)와 소비자(Consumer)가 공동으로 API를 설계하게 되고, Mockup을 작성하고 문서 작성을
+      시도하게 됨. 즉, API가장 먼저 Design하고 개발하고 문서화 되어야 함. 단 변경이 최소화 되도록 설계가 되어야 함.
+
+ㅇ API설계 절차
+    1. API도출
+       . Service Mesh 역할을 하는 API도출 (내부 서비스간의 상호작용용 API)
+       a) Provider 주도 식별
+          . MS의 소유 Data의 CUD발생시 연관되 데이터를 정의하고 이 Data와 외부 서비스의 연계가 필요한 경우 식별이 됨.
+       b) Consumer 주도 식별
+          . Consumer가 타 서비스에서 제공받아야 하는 경우 식별이 됨. 주로 조회성 기능이 많음.
+       
+       . External Gateway 역할을 하는 API도출(외부에서 호출되어지는 API)
+         - External G/W는 Client나 UI tier에서 요청되는 API.
+         - 내부 여러 서비스를 거쳐 최종적으로 화면으로 응답
+    
+    2. API 설계
+      .Provider와 Consumer가 스펙을 설계, 검토, 보안/정련하여 API Contract를 작성함.
+      . Contract가 명확해야 서비스 단위로 상세 설계 구현이 독립적으로 진행이 됨.
+      . Contract를 통해서 Test진행.
+      
